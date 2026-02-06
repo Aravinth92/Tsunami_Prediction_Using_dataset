@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Earthquake Predictor</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<h1>Earthquake Magnitude Predictor</h1>
+<form method="POST">
+<input type="number" step="0.1" name="depth" placeholder="Enter Depth" required>
+<button>Predict</button>
+</form>
+{% if prediction %}
+<div class="result">Predicted Magnitude: {{prediction}}</div>
+{% endif %}
+<p>MSE: {{mse}}</p>
+<p>R2: {{r2}}</p>
+</div>
+</body>
+</html>
